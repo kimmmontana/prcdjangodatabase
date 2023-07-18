@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #"admin_interface",
+    #"colorfield",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "PRCBoardExamRegistration",
+    "explorer",
 ]
 
 MIDDLEWARE = [
@@ -82,8 +85,22 @@ DATABASES = {
         "PASSWORD": "kimmontana23",
         "PORT": 3306,
         "HOST": "127.0.0.1",
-    }
+    },
+    "readonly": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "prcdatabase",
+        "USER": "root",
+        "PASSWORD": "kimmontana23",
+        "PORT": 3306,
+        "HOST": "127.0.0.1",
+    },
+
 }
+# Django Explorer settings
+EXPLORER_CONNECTIONS = {
+    'default': 'readonly',
+}
+EXPLORER_DEFAULT_CONNECTION = 'readonly'
 
 
 # Password validation
